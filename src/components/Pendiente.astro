@@ -1,0 +1,20 @@
+---
+// Página en redacción. Se usa mientras no esté el texto final.
+const { eyebrow, titulo, bajada, texto } = Astro.props;
+---
+<section class="page-hero dark">
+  <div class="container">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1 class="display">{titulo}</h1>
+    <p class="lede">{bajada}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="prose">
+      <span class="badge" style="color: var(--gray); border-color: var(--line)">Borrador · en redacción</span>
+      <p>{texto}</p>
+      <p><a class="link-go" href="/">← Volver al inicio</a></p>
+    </div>
+  </div>
+</section>

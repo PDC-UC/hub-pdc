@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import LogoCard from '../../components/LogoCard.astro';
+import pastorales from '../../data/pastorales.json';
+
+// Orden fijo de los filtros; si aparece un campus nuevo en los datos, se agrega al final.
+const orden = ['Casa Central', 'San Joaquín', 'Oriente', 'Lo Contador', 'Villarrica'];
+const presentes = [...new Set(pastorales.map((p) => p.campus).filter(Boolean))];
+const campus = [...orden.filter((c) => presentes.includes(c)), ...presentes.filter((c) => !orden.includes(c))];
+---
+<Base title="Pastorales de carrera" description="Las pastorales de carrera de Pastoral UC, una por cada carrera. Encuentra la tuya.">
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow">Directorio</p>
+      <h1 class="display">Las pastorales de carrera</h1>
+      <p class="lede">Una por cada carrera, repartidas en {campus.length} campus. Busca la tuya y mira cómo sumarte.</p>
+    </div>
+  </section>
+
+  <section class="section section-soft" style="padding-top: 56px">
+    <div class="container">
+      <div class="chips" role="group" aria-label="Filtrar por campus">
+        <button class="chip" type="button" data-filtro="" aria-pressed="true">Todas</button>
+        {campus.map((c) => <button class="chip" type="button" data-filtro={c} aria-pressed="false">{c}</button>)}
+      </div>
+      <p class="lede" id="conteo" aria-live="polite" style="margin-top: 20px; font-size: 15px">Mostrando {pastorales.length} pastorales</p>
+      <div class="logo-grid">
+        {pastorales.map((p) => <LogoCard p={p} campus />)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const botones = document.querySelectorAll<HTMLButtonElement>('.chip');
+  const tarjetas = document.querySelectorAll<HTMLElement>('.logo-card');
+  const conteo = document.getElementById('conteo');
+
+  botones.forEach((b) =>
+    b.addEventListener('click', () => {
+      const filtro = b.dataset.filtro ?? '';
+      botones.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      let visibles = 0;
+      tarjetas.forEach((t) => {
+        const mostrar = filtro === '' || t.dataset.campus === filtro;
+        t.hidden = !mostrar;
+        if (mostrar) visibles++;
+      });
+      if (conteo) conteo.textContent = `Mostrando ${visibles} ${visibles === 1 ? 'pastoral' : 'pastorales'}`;
+    })
+  );
+</script>

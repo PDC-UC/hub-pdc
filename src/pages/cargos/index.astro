@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import Arrow from '../../components/Arrow.astro';
+import { getCargos } from '../../lib/cargos.js';
+
+const cargos = getCargos();
+const pad = (n) => String(n).padStart(2, '0');
+---
+<Base title="Cargos" description="Una guía por cada cargo de los consejos: qué hace, cómo se vive durante el año y los materiales de 2026.">
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow">Cargos de los consejos</p>
+      <h1 class="display">Cada cargo tiene su guía</h1>
+      <p class="lede">Qué hace, cómo se vive durante el año y los informes y materiales de 2026, todo en un solo lugar.</p>
+    </div>
+  </section>
+
+  <section class="section dark" style="padding-top: 0">
+    <div class="container">
+      <div class="rows" style="margin-top: 0">
+        {cargos.map((c) => (
+          <a class="row" href={`/cargos/${c.slug}`}>
+            <span class="row-l"><span class="row-n">{pad(c.data.orden)}</span><span class="row-name">{c.data.titulo}</span></span>
+            <Arrow />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,23 @@
+---
+import sitio from '../data/sitio.json';
+const contactos = [
+  sitio.correo && { texto: sitio.correo, href: `mailto:${sitio.correo}` },
+  sitio.instagram && { texto: sitio.instagram, href: `https://instagram.com/${sitio.instagram.replace('@', '')}` },
+].filter(Boolean);
+---
+<footer class="site-footer dark">
+  <div class="container">
+    <div>
+      <img src="/pastoral-uc-blanco.png" alt="Pastoral UC" width="100" height="48" />
+      <p>Pastorales de Carrera, Dirección de Pastoral y Cultura Cristiana, Pontificia Universidad Católica de Chile.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/pastorales">Pastorales</a>
+      <a href="/cargos">Cargos</a>
+      <a href="/como-participar">Cómo participar</a>
+      <a href="/coordinadores">Zona de coordinadores</a>
+      {contactos.map((c) => <a href={c.href}>{c.texto}</a>)}
+    </div>
+  </div>
+  <div class="container copy">© 2026 Pastoral UC</div>
+</footer>

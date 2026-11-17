@@ -1,0 +1,12 @@
+---
+const { p, campus = false } = Astro.props;
+---
+<a class="logo-card" href={`/pastorales/${p.slug}`} data-campus={p.campus ?? ''}>
+  <div class="logo-box">
+    {p.logo
+      ? <img src={`/logos/${p.logo}`} alt={`Logo de Pastoral ${p.nombre}`} loading="lazy" />
+      : <span class="logo-ph" aria-hidden="true">{p.nombre}</span>}
+  </div>
+  <span class="logo-name">{p.nombre}</span>
+  {campus && p.campus && <span class="logo-campus">{p.campus}</span>}
+</a>

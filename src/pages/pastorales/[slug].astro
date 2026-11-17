@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import pastorales from '../../data/pastorales.json';
+
+export function getStaticPaths() {
+  return pastorales.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+---
+<Base title={`Pastoral ${p.nombre}`} description={`Pastoral de ${p.nombre}: qué hace y cómo sumarte.`}>
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow"><a href="/pastorales">← Todas las pastorales</a></p>
+      <h1 class="display">Pastoral {p.nombre}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container ficha">
+      <div class="ficha-logo">
+        {p.logo
+          ? <img src={`/logos/${p.logo}`} alt={`Logo de Pastoral ${p.nombre}`} />
+          : <span class="logo-ph">{p.nombre}</span>}
+      </div>
+      <div class="prose">
+        <div class="meta">
+          {p.campus && <span><strong>Campus:</strong> {p.campus}</span>}
+        </div>
+        <h2>Qué hacemos</h2>
+        <p>Estamos escribiendo la presentación de esta pastoral. Pronto vas a encontrar aquí qué hace y cómo sumarte.</p>
+        <h2>Cómo participar</h2>
+        <p>Mientras tanto, revisa la guía general para saber cómo sumarte a una pastoral de carrera.</p>
+        <p><a class="btn btn-light" style="background: var(--ink); color: #fff" href="/como-participar">Cómo participar</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
