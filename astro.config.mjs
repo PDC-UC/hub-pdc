@@ -5,4 +5,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://www.pastoralesdecarrera.cl',
   output: 'static',
+  // Las direcciones antiguas siguen funcionando.
+  redirects: {
+    '/coordinadores': '/consejo',
+    '/cargos': '/consejo',
+    '/cargos/[slug]': '/consejo/[slug]',
+  },
 });

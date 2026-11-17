@@ -1,0 +1,102 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TeamsMenu from '../../../components/TeamsMenu.astro';
+import { getCargos } from '../../../lib/cargos.js';
+
+// Los perfiles de la meta 4 salen de los mismos archivos de cada cargo (src/content/cargos),
+// así el texto es siempre el mismo aquí y en la guía de cada cargo.
+const perfiles = getCargos().filter((c) => c.slug !== 'coordinacion');
+---
+<Base title="Primeras metas como coordinador/a 2027" description="Las primeras metas de los coordinadores de las pastorales de carrera para 2027: leer el Documento Fundacional y el informe de traspaso, crear los énfasis y definir las tareas por cargo.">
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow"><a href="/consejo/coordinacion">← Zona de coordinadores</a></p>
+      <h1 class="display">Primeras metas como coordinador/a 2027</h1>
+      <p class="lede">Cuatro metas sencillas para partir el año con claridad.</p>
+      <div class="btn-row zona-acciones">
+        <TeamsMenu />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container doc-layout">
+      <nav class="doc-nav" aria-label="En esta página">
+        <p>En esta página</p>
+        <ul>
+          <li><a href="#meta-1">1. Documento Fundacional</a></li>
+          <li><a href="#meta-2">2. Informe de Traspaso 2026</a></li>
+          <li><a href="#meta-3">3. Énfasis 2027</a></li>
+          <li><a href="#meta-4">4. Tareas por cargo</a></li>
+        </ul>
+      </nav>
+
+      <article class="prose doc">
+        <p>En este documento encontrarás las primeras metas que deberán trabajar como coordinadores para este 2027. La verdad son bastante sencillas, pero al ser procesos nuevos para las PDC, se las documentamos y se las dejamos por escrito para que puedan leerlas con tiempo.</p>
+        <p>En resumen, las metas consisten en:</p>
+        <ol>
+          <li>Lectura del nuevo Documento Fundacional de Pastorales de Carrera</li>
+          <li>Lectura del Informe de Traspaso 2026</li>
+          <li>Creación de los énfasis 2027</li>
+          <li>Desarrollo de tareas por cargos</li>
+        </ol>
+
+        <h2 id="meta-1">1. Documento Fundacional de Pastorales de Carrera</h2>
+        <p>Este nuevo documento es clave, pero es un documento (y es importante que recuerdes esto): una Pastoral de Carrera no existe si se queda en el papel, ni en lo teórico, existe en lo práctico y sobre todo en lo humano.</p>
+        <p>Este documento es una orientación clara sobre qué es y en qué consiste el proyecto que hoy tú asumes. Cuenta con una misión, con objetivos y con pilares; estos últimos serán los fundamentos esenciales para la "base", y con esa base clara, queremos que salgas jugando.</p>
+        <p>Este documento tiene cosas muy importantes como:</p>
+        <ol>
+          <li>Historia y encuadre de las Pastorales de Carrera</li>
+          <li>Misión</li>
+          <li>Pilares: Encuentro, Vocación y Servicio</li>
+          <li>Rol del coordinador</li>
+          <li>Rol del asesor</li>
+        </ol>
+        <p><a class="btn btn-ink" href="/que-son">Leer el Documento Fundacional</a></p>
+
+        <h2 id="meta-2">2. Informe de Traspaso 2026</h2>
+        <p>El 2026 sus coordinadores, junto con sus equipos, desarrollaron informes de traspaso. Este fue un proceso nuevo para las Pastorales de Carrera, pero que otros proyectos de nuestra Pastoral ya venían realizando hace años, y que consideramos de gran apoyo implementar a partir del 2026.</p>
+        <p>El objetivo principal de estos informes es facilitar el traspaso de información recopilada durante el 2026 a las personas que ocuparán cada cargo en tu nuevo consejo. Adicionalmente a este informe, se solicitó que pudieran dejar en las carpetas de cada cargo los documentos (words, excels, pdfs u otros que hayan sido utilizados).</p>
+        <p>De esta manera, cuando inviten a personas a ser parte de su consejo, tendrán un informe que les podrán transmitir, para que sepan realmente en qué consiste el cargo, qué fue aquello que resultó (y lo que no) y las ideas que se realizaron (y las que quedaron pendientes) del año 2026. Estos informes se encuentran en tu carpeta virtual de Teams para que puedas revisarlos: el de ustedes de coordinación y los de cada cargo para los nuevos miembros de tu consejo (te recomendamos leerlos antes de entregarlos).</p>
+        <p>Lo que sí o sí debes leer, y resultará crucial para entender tu rol de Coordinador/a, es el «Informe de Traspaso de Coordinación 2026». Este informe fue redactado por tus coordinadores pasados, con cariño y pensando en un informe que a ellos les hubiera servido cuando asumieron el cargo. Se intenta transmitir un año lleno de aprendizajes, de experiencias, de encuentros con el otro, de ideas, de éxitos (y fracasos), pero por sobre todo se intenta dejar por escrito la base de apoyo para que te desarrolles en tu rol de Coordinador/a.</p>
+        <p>Esta es tu segunda meta, ojalá sea una lectura orientadora, y cuenta con que tus coordinadores pasados estarán felices de responder preguntas, de mandarte datos, de ayudarte a pensar en personas, y en verdad de lo que necesites, así que cuenta con ellos.</p>
+        <p class="nota-prose">Encuentra la carpeta de tu pastoral desde el menú <strong>Teams</strong>, arriba en esta página.</p>
+
+        <h2 id="meta-3">3. Creación de los énfasis de tu PDC 2027</h2>
+        <h3>¿Qué es un énfasis?</h3>
+        <p>Los énfasis de cada proyecto constituyen un proceso fundamental de orientación al proyecto y la experiencia formativa para esta edición. El objetivo de esta meta es construir un documento cuyo propósito es establecer las bases que guiarán el proceso de trabajo y formación de quienes lideren y participen en las actividades durante el año.</p>
+        <p>A diferencia de los pilares, que expresan la identidad y esencia permanente de las pastorales de carrera desde su origen, los énfasis buscan otorgar un sello propio y distintivo a la experiencia de cada año, respondiendo a las necesidades, desafíos y oportunidades de su territorio para el crecimiento de la vida pastoral en sus territorios.</p>
+        <h3>¿Cómo se construyen?</h3>
+        <p>Estos énfasis se construyen a partir de:</p>
+        <ul>
+          <li>la observación de las necesidades y características individuales de tu territorio,</li>
+          <li>la reflexión, el discernimiento y las conversaciones,</li>
+          <li>identificar qué los representa y cuáles son sus fortalezas y debilidades como tales,</li>
+          <li>y el tinte personal y formativo que ustedes le quieran dar.</li>
+        </ul>
+        <p>Para así orientar de manera adecuada la llegada a los voluntarios, las formaciones y las actividades a realizar, promoviendo un encuentro personal con Cristo y la vivencia de la fe hacia el servicio y la misión de su pastoral de carrera.</p>
+
+        <h2 id="meta-4">4. Creación de tareas por cargo, a partir de los perfiles de cargo</h2>
+        <p>A continuación se presentan perfiles básicos para los cargos que existen en las pastorales de carrera. Recuerden que estos cargos no son fijos, son una guía de opciones que hasta ahora han constituido los proyectos. Ustedes pueden tener o no tener un cargo específico, o una o más personas si lo creen necesario, o incluso crear cargos si es que así lo estiman conveniente. Lo que más se valora a la hora de los cargos es poder transmitir realmente qué es lo que ustedes esperan de las personas que ocuparán cada cargo. De esta manera podemos:</p>
+        <ol>
+          <li>Invitar a personas sabiendo claramente qué esperamos de ellos, y sobre todo qué pediremos de ellos.</li>
+          <li>Orientar y liderar mejor, sabiendo claramente qué le vamos a pedir y cómo esperamos que realice su rol.</li>
+          <li>Transmitir el nivel de compromiso que esperamos de cada uno de ellos.</li>
+          <li>Dar las bases para que cada uno de los miembros de su equipo pueda liderar en cada uno de sus roles.</li>
+        </ol>
+        <p>Les dejamos a continuación un perfil de los 9 cargos de pastorales de carrera.</p>
+
+        {perfiles.map((c, i) => {
+          const Perfil = c.Content;
+          return (
+            <section class="perfil-bloque" id={c.slug}>
+              <h3>{i + 1}. {c.data.titulo}{c.data.nuevo && <span class="tag tag-inline">Cargo nuevo</span>}</h3>
+              <Perfil />
+              <p><a class="link-go" href={`/consejo/${c.slug}`}>Ver la guía del cargo →</a></p>
+            </section>
+          );
+        })}
+      </article>
+    </div>
+  </section>
+</Base>

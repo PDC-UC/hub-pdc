@@ -1,0 +1,7 @@
+{
+  "nota": "Enlaces directos de la Zona de Consejo. Si 'url' es null, la tarjeta muestra 'Próximamente'. Estos enlaces se abren con cuenta UC o Airtable; no subas documentos con datos de personas al sitio.",
+  "enlaces": {
+    "postulacion": { "titulo": "Postulación al consejo", "texto": "Formulario en Airtable para postular a un cargo del consejo.", "url": null },
+    "aprobacion": { "titulo": "Aprobación de consejos", "texto": "Formulario en Airtable para aprobar a quienes conformarán cada consejo.", "url": null }
+  }
+}

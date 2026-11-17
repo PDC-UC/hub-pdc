@@ -1,9 +1,0 @@
-{
-  "nota": "Pega aquí los enlaces (por ejemplo de SharePoint). Si 'url' es null, la tarjeta muestra 'Próximamente'. Estos enlaces se abren con la cuenta UC, no subas documentos con datos de personas al sitio.",
-  "accesos": [
-    { "titulo": "Guías de trabajo", "texto": "Cómo funciona cada proceso, paso a paso.", "url": null },
-    { "titulo": "Calendario", "texto": "Consejos, actividades y fechas importantes del año.", "url": null },
-    { "titulo": "Formularios", "texto": "Registros y solicitudes que usan las pastorales.", "url": null },
-    { "titulo": "Ruta de Misiones y Trabajos", "texto": "El manual para organizar tus propias misiones y trabajos.", "url": null }
-  ]
-}

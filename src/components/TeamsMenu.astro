@@ -1,0 +1,37 @@
+---
+// Menú desplegable con el acceso directo al canal de Teams de cada pastoral.
+// Los enlaces se editan en src/data/teams.json.
+import pastorales from '../data/pastorales.json';
+import teams from '../data/teams.json';
+
+const urls = Object.fromEntries(teams.canales.map((c) => [c.slug, c.url]));
+---
+<details class="teams">
+  <summary class="btn btn-ghost">
+    Teams
+    <svg class="caret" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+  </summary>
+  <div class="teams-panel">
+    <p class="teams-head">Carpeta de tu pastoral en Teams. Se abre con tu cuenta UC.</p>
+    <ul>
+      {pastorales.map((p) => (
+        <li>
+          {urls[p.slug]
+            ? <a href={urls[p.slug]} target="_blank" rel="noopener">{p.nombre}</a>
+            : <span class="off">{p.nombre}<small>pronto</small></span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</details>
+
+<script>
+  // Cierra el menú al hacer clic afuera o al apretar Escape.
+  const menus = document.querySelectorAll<HTMLDetailsElement>('details.teams');
+  document.addEventListener('click', (e) => {
+    menus.forEach((m) => { if (m.open && !m.contains(e.target as Node)) m.open = false; });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') menus.forEach((m) => { if (m.open) { m.open = false; m.querySelector('summary')?.focus(); } });
+  });
+</script>

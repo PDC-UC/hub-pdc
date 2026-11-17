@@ -1,31 +1,14 @@
 ---
 titulo: "Formación"
 orden: 9
-resumen: "Guía del cargo de Formación: qué hace, cómo se vive durante el año y los materiales de 2026."
-borrador: true
-# Documentos que se abren con la cuenta UC (SharePoint). Formato de cada uno:
-#   - titulo: "Informe de cierre 2026"
-#     url: "https://..."
-informes: []
+pilar: "Vocación"
+resumen: "Transmite la inquietud de fe y forma personas al servicio de los demás."
+breve: "Lleva a cabo el segundo pilar, la Vocación. Forma personas entregándoles contenido y herramientas para crecer en la fe católica, e incentiva las preguntas y el diálogo: no se espera que tenga todas las respuestas."
 materiales: []
 ---
 
-## Qué hace este cargo
+Este cargo está encargado de llevar a cabo el segundo pilar, la Vocación.
 
-Estamos escribiendo esta guía. Pronto vas a encontrar aquí, en pocas líneas, qué hace el cargo de Formación.
+El cargo de formación consiste principalmente en transmitir la inquietud de fe a los que estamos llamados y de poder conocer más a Dios. Es el rol encargado de formar personas al servicio de los demás, entregándoles contenido y herramientas que les permitan crecer en la fe católica. Es un rol que incentiva las preguntas y sobre todo el diálogo, no se espera que tenga todas las respuestas.
 
-## Responsabilidades principales
-
-Por completar.
-
-## Cómo se vive durante el año
-
-Por completar.
-
-## Preguntas frecuentes
-
-Por completar.
-
-## A quién acudir
-
-Por completar.
+Este rol busca a personas capaces de liderar el área formativa, que sean planificadas, creativas en las actividades e identifiquen cuáles son esos temas que el equipo necesita profundizar y que sus voluntarios están esperando escuchar y conocer. Para esto es necesario que sean personas receptivas, inclusivas, pedagógicas y muy inquietas en la búsqueda de la verdad.

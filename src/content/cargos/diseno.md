@@ -1,31 +1,13 @@
 ---
 titulo: "Diseño"
 orden: 6
-resumen: "Guía del cargo de Diseño: qué hace, cómo se vive durante el año y los materiales de 2026."
-borrador: true
-# Documentos que se abren con la cuenta UC (SharePoint). Formato de cada uno:
-#   - titulo: "Informe de cierre 2026"
-#     url: "https://..."
-informes: []
+resumen: "Hace que la invitación, el grupo y la pastoral se vean atractivos gráficamente."
+breve: "Crea y diseña la información visual de las actividades y el contenido identitario de la PDC, en formatos atractivos, novedosos y accesibles: imágenes, posts, videos y flyers, además de elementos como manuales formativos, poleras, cruces o logo."
 materiales: []
 ---
 
-## Qué hace este cargo
+Es el rol que permite que la invitación, el grupo y la pastoral se vean atractivos gráficamente.
 
-Estamos escribiendo esta guía. Pronto vas a encontrar aquí, en pocas líneas, qué hace el cargo de Diseño.
+Su rol consiste en crear y diseñar la información visual de las actividades de su PDC y el contenido identitario de esta. La idea es plasmar las iniciativas en formatos atractivos, novedosos y accesibles, a través de imágenes, posts, videos, flyers. Así como también, crear los elementos gráficos que su pastoral necesite, tales como diseño de manuales formativos, poleras, cruces, logo, etc.
 
-## Responsabilidades principales
-
-Por completar.
-
-## Cómo se vive durante el año
-
-Por completar.
-
-## Preguntas frecuentes
-
-Por completar.
-
-## A quién acudir
-
-Por completar.
+Este rol busca a personas que sean creativas, con sentido de estética, comprometidas, organizadas y que tengan un conocimiento en estas herramientas para diseñar, como Canva, Photoshop o CapCut.

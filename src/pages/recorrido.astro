@@ -1,0 +1,259 @@
+---
+import Base from '../layouts/Base.astro';
+import r from '../data/recorrido-2026.json';
+
+const fmt = (n) => n.toLocaleString('es-CL');
+const maxMes = Math.max(...r.meses.datos.map((d) => d.n));
+const maxTipo = Math.max(...r.tipos.datos.map((d) => d.n));
+const maxApo = Math.max(...r.apostolados.datos.map((d) => d.n));
+const maxCampus = Math.max(...r.campus.datos.map((d) => d.n));
+const capitulos = ['Gracias', 'Lo que hicimos', 'Mes a mes', 'Qué hicimos', 'Dónde estuvimos', 'Apostolados', 'Quienes repiten', 'Algunos datos', 'Cómo leer las cifras', 'Gracias'];
+---
+<Base title="Recorrido 2026" description="Un recorrido por lo que vivieron las pastorales de carrera en 2026: actividades, apostolados y personas, mes a mes.">
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow">Recorrido</p>
+      <h1 class="display">Lo que hemos vivido, año a año</h1>
+      <p class="lede">Un paseo por el trabajo de las pastorales de carrera. Parte por 2026 y se irá sumando cada año. Baja con calma: el recorrido avanza a medida que lees.</p>
+      <div class="chips" role="group" aria-label="Años" style="margin-top: 32px">
+        <span class="chip chip-on" aria-current="true">2026</span>
+        <span class="chip chip-off" aria-disabled="true">2025 · pronto</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="rec" data-rec data-capitulos={JSON.stringify(capitulos)}>
+    <div class="rec-bar" aria-hidden="true">
+      <div class="container">
+        <span class="rec-titulo">{r.titulo}</span>
+        <span class="rec-cap" data-cap>{capitulos[0]}</span>
+        <span class="rec-count" data-paso>1 / {capitulos.length}</span>
+      </div>
+      <div class="rec-prog"><span data-prog></span></div>
+    </div>
+
+    <!-- 1. Gracias -->
+    <section class="cap dark" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow reveal">Último Consejo de Coordinadores · 19 de noviembre de 2026</p>
+        <h2 class="display cap-grande reveal" style="--d: 80ms">{r.gracias.titulo.replace('por su sí', '')}<em>por su sí</em></h2>
+        <p class="cap-texto reveal" style="--d: 160ms">{r.gracias.texto}</p>
+        <p class="cap-texto fuerte reveal" style="--d: 240ms">{r.gracias.cierre}</p>
+      </div>
+    </section>
+
+    <!-- 2. Lo que hicimos juntos -->
+    <section class="cap" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow claro reveal">Datos</p>
+        <h2 class="h2 reveal">Lo que hicimos juntos.</h2>
+        <div class="grandes">
+          {r.grandes.map((g, i) => (
+            <div class="grande reveal" style={`--d: ${i * 120}ms`}>
+              <span class="g-pre">{g.prefijo}</span>
+              <span class="g-n" data-count={g.n}>{fmt(g.n)}</span>
+              <span class="g-t">{g.titulo}</span>
+              <p>{g.texto}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Mes a mes -->
+    <section class="cap soft" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow claro reveal">Un año</p>
+        <h2 class="h2 reveal">Mes a mes</h2>
+        <div class="meses reveal" role="list" aria-label="Actividades por mes">
+          {r.meses.datos.map((m) => (
+            <div class="mes" role="listitem">
+              <span class="mes-n">{m.n}</span>
+              <span class="mes-barra"><span class="fill-v" style={`--v: ${m.n / maxMes}`}></span></span>
+              <span class="mes-l">{m.mes}</span>
+            </div>
+          ))}
+        </div>
+        <p class="cap-nota reveal">{r.meses.nota}</p>
+      </div>
+    </section>
+
+    <!-- 4. Qué hicimos -->
+    <section class="cap" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow claro reveal">Qué</p>
+        <h2 class="h2 reveal">{r.tipos.titulo}</h2>
+        <div class="hbars">
+          {r.tipos.datos.map((t, i) => (
+            <div class="hbar reveal" style={`--d: ${i * 80}ms`}>
+              <span class="hb-l">{t.tipo}</span>
+              <span class="hb-t"><span class="fill-h" style={`--v: ${t.n / maxTipo}`}></span></span>
+              <span class="hb-n">{t.n}</span>
+            </div>
+          ))}
+        </div>
+        <p class="cap-nota reveal">{r.tipos.nota}</p>
+      </div>
+    </section>
+
+    <!-- 5. Dónde estuvimos -->
+    <section class="cap dark" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow reveal">En cuatro campus</p>
+        <h2 class="h2 reveal">{r.campus.titulo}</h2>
+        <div class="campus-grid">
+          {r.campus.datos.map((c, i) => (
+            <div class="campus reveal" style={`--d: ${i * 100}ms`}>
+              <span class="c-n" data-count={c.n}>{c.n}</span>
+              <span class="c-t">{c.campus}</span>
+              <span class="c-x">{c.texto}</span>
+              <span class="c-barra"><span class="fill-h" style={`--v: ${c.n / maxCampus}`}></span></span>
+            </div>
+          ))}
+        </div>
+        <p class="cap-nota reveal">{r.campus.nota}</p>
+      </div>
+    </section>
+
+    <!-- 6. Apostolados -->
+    <section class="cap" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow claro reveal">Apostolados</p>
+        <h2 class="h2 reveal">{r.apostolados.titulo}</h2>
+        <div class="hbars apos">
+          {r.apostolados.datos.map((a, i) => (
+            <div class="hbar reveal" style={`--d: ${(i % 5) * 70}ms`}>
+              <span class="hb-l">{a.nombre}<small>{a.cuando}</small></span>
+              <span class="hb-t"><span class="fill-h" style={`--v: ${a.n / maxApo}`}></span></span>
+              <span class="hb-n">{a.n}</span>
+            </div>
+          ))}
+        </div>
+        <p class="cap-texto chico reveal">{r.apostolados.ademas}</p>
+        <p class="cap-nota reveal">{r.apostolados.nota}</p>
+      </div>
+    </section>
+
+    <!-- 7. Quienes repiten -->
+    <section class="cap soft" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow claro reveal">Personas distintas</p>
+        <h2 class="h2 reveal">{r.repiten.titulo}</h2>
+        <div class="grandes tres">
+          {r.repiten.datos.map((g, i) => (
+            <div class="grande reveal" style={`--d: ${i * 120}ms`}>
+              <span class="g-n" data-count={g.n}>{g.n}</span>
+              <span class="g-t">{g.titulo}</span>
+              <p>{g.texto}</p>
+            </div>
+          ))}
+        </div>
+        <p class="cap-nota reveal">{r.repiten.nota}</p>
+      </div>
+    </section>
+
+    <!-- 8. Algunos datos -->
+    <section class="cap dark" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow reveal">Algunos</p>
+        <h2 class="h2 reveal">{r.algunos.titulo}</h2>
+        <div class="grandes cuatro">
+          {r.algunos.datos.map((g, i) => (
+            <div class="grande reveal" style={`--d: ${i * 100}ms`}>
+              <span class="g-n" data-count={g.n}>{g.n}</span>
+              <span class="g-t">{g.titulo}</span>
+              <p>{g.texto}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Cómo leer -->
+    <section class="cap" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow claro reveal">Con transparencia</p>
+        <h2 class="h2 reveal">{r.comoLeer.titulo}</h2>
+        <div class="leer">
+          {r.comoLeer.datos.map((d, i) => (
+            <div class="leer-item reveal" style={`--d: ${i * 80}ms`}>
+              <h3>{d.titulo}</h3>
+              <p>{d.texto}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Cierre -->
+    <section class="cap dark cierre" data-capitulo>
+      <div class="container cap-in">
+        <p class="eyebrow reveal">Gracias</p>
+        <h2 class="display cap-grande reveal" style="--d: 80ms">{r.cierre}</h2>
+        <p class="cap-texto reveal" style="--d: 160ms">Último Consejo de Coordinadores · 19 de noviembre de 2026</p>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  const rec = document.querySelector<HTMLElement>('[data-rec]');
+  if (rec) {
+    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const capitulos: string[] = JSON.parse(rec.dataset.capitulos ?? '[]');
+    const secciones = Array.from(rec.querySelectorAll<HTMLElement>('[data-capitulo]'));
+    const barra = rec.querySelector<HTMLElement>('[data-prog]');
+    const nombre = rec.querySelector<HTMLElement>('[data-cap]');
+    const paso = rec.querySelector<HTMLElement>('[data-paso]');
+
+    // Los elementos aparecen al llegar a ellos. Sin JS, todo se ve de entrada.
+    if (!reducido && 'IntersectionObserver' in window) {
+      document.documentElement.classList.add('js');
+      const contar = (el: HTMLElement) => {
+        const meta = Number(el.dataset.count);
+        const fmt = (n: number) => n.toLocaleString('es-CL');
+        const inicio = performance.now();
+        const dur = 1100;
+        const paso = (t: number) => {
+          const p = Math.min((t - inicio) / dur, 1);
+          el.textContent = fmt(Math.round(meta * (1 - Math.pow(1 - p, 3))));
+          if (p < 1) requestAnimationFrame(paso);
+        };
+        requestAnimationFrame(paso);
+      };
+      const io = new IntersectionObserver(
+        (entradas) => {
+          entradas.forEach((e) => {
+            if (!e.isIntersecting) return;
+            const el = e.target as HTMLElement;
+            el.classList.add('in');
+            el.querySelectorAll<HTMLElement>('[data-count]').forEach(contar);
+            io.unobserve(el);
+          });
+        },
+        { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
+      );
+      rec.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    }
+
+    // Barra de avance y nombre del capítulo actual.
+    const actualizar = () => {
+      const caja = rec.getBoundingClientRect();
+      const total = caja.height - window.innerHeight;
+      const avance = total > 0 ? Math.min(Math.max(-caja.top / total, 0), 1) : 0;
+      if (barra) barra.style.transform = `scaleX(${avance})`;
+      let actual = 0;
+      secciones.forEach((s, i) => { if (s.getBoundingClientRect().top <= window.innerHeight * 0.4) actual = i; });
+      if (nombre) nombre.textContent = capitulos[actual] ?? '';
+      if (paso) paso.textContent = `${actual + 1} / ${capitulos.length}`;
+    };
+    let pendiente = false;
+    window.addEventListener('scroll', () => {
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(() => { actualizar(); pendiente = false; });
+    }, { passive: true });
+    window.addEventListener('resize', actualizar);
+    actualizar();
+  }
+</script>

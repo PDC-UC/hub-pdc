@@ -1,0 +1,89 @@
+{
+  "nota": "Cifras de la presentación del Último Consejo de Coordinadores (19 de noviembre de 2026). Para actualizarlas, cambia los números aquí; la página se arma sola.",
+  "titulo": "2026 en cifras",
+  "gracias": {
+    "titulo": "Muchas gracias por su sí",
+    "texto": "Todo lo que viene son números, pero detrás de cada uno hay alguien que dijo que sí: a organizar, a invitar, a ir.",
+    "cierre": "Gracias por eso."
+  },
+  "grandes": [
+    { "n": 380, "prefijo": "Más de", "titulo": "actividades", "texto": "Entre marzo y noviembre, en 20 pastorales de carrera y 4 campus. 217 ya están confirmadas por fotos, mensajes o Instagram; el resto estaba en agenda." },
+    { "n": 730, "prefijo": "Más de", "titulo": "participaciones en apostolados", "texto": "Cada vez que alguien se inscribió y fue aceptado en una misión, un trabajo, un operativo o una jornada con inscripción en Acutis." },
+    { "n": 530, "prefijo": "Más de", "titulo": "personas distintas", "texto": "Sin contar dos veces a quien fue a más de un proyecto. 130 de ellas participaron en dos o más." }
+  ],
+  "meses": {
+    "titulo": "Un año mes a mes",
+    "nota": "Actividades por mes. Abril fue el más activo, con 59. Julio fue receso de invierno. Diciembre (Trabajos San Francisco) no se muestra.",
+    "datos": [
+      { "mes": "Mar", "n": 50 }, { "mes": "Abr", "n": 59 }, { "mes": "May", "n": 53 },
+      { "mes": "Jun", "n": 49 }, { "mes": "Jul", "n": 6 }, { "mes": "Ago", "n": 57 },
+      { "mes": "Sep", "n": 49 }, { "mes": "Oct", "n": 29 }, { "mes": "Nov", "n": 30 }
+    ]
+  },
+  "tipos": {
+    "titulo": "Qué hicimos",
+    "nota": "Actividades por tipo. Las misiones y trabajos son pocas, pero cada una reúne a decenas de personas.",
+    "datos": [
+      { "tipo": "Comunidad y vínculos", "n": 104 },
+      { "tipo": "Oración, misa o adoración", "n": 84 },
+      { "tipo": "Apostolado o servicio", "n": 78 },
+      { "tipo": "Gestión o fundraising", "n": 54 },
+      { "tipo": "Formación o retiro", "n": 40 },
+      { "tipo": "Misión o trabajo", "n": 23 }
+    ]
+  },
+  "campus": {
+    "titulo": "Dónde estuvimos",
+    "nota": "Una actividad entre pastorales de distintos campus cuenta en cada uno. Hubo además 11 actividades de toda la Pastoral UC. De Villarrica no tenemos datos.",
+    "datos": [
+      { "campus": "San Joaquín", "n": 228, "texto": "actividades de las pastorales del campus" },
+      { "campus": "Casa Central", "n": 124, "texto": "actividades de las pastorales del campus" },
+      { "campus": "Lo Contador", "n": 40, "texto": "actividades del campus" },
+      { "campus": "Oriente", "n": 11, "texto": "actividades del campus" }
+    ]
+  },
+  "apostolados": {
+    "titulo": "Misiones, trabajos y operativos",
+    "nota": "Personas inscritas y aceptadas en Acutis, no asistencia verificada.",
+    "datos": [
+      { "nombre": "Misiones Santa Mónica", "cuando": "abril–mayo", "n": 92 },
+      { "nombre": "Misiones San Francisco", "cuando": "mayo", "n": 47 },
+      { "nombre": "Operativos San Lucas", "cuando": "junio", "n": 71 },
+      { "nombre": "Trabajos San Isidro", "cuando": "septiembre", "n": 64 },
+      { "nombre": "Trabajos San Pedro", "cuando": "septiembre–octubre", "n": 37 },
+      { "nombre": "Misiones Santa Teresa", "cuando": "octubre", "n": 60 },
+      { "nombre": "Misiones Sustentables", "cuando": "octubre", "n": 15 },
+      { "nombre": "Trabajos San Agustín", "cuando": "octubre, dos fechas", "n": 118 },
+      { "nombre": "Operativos San Lucas 2", "cuando": "noviembre", "n": 54 }
+    ],
+    "ademas": "Y además: Imágenes de Cs. de la Salud (31), Misiones Santa Teresa en salida (16), la Jornada de Voluntarios de College (22), Cruces de Medicina (15) y 61 inscritas a Trabajos San Francisco, en diciembre."
+  },
+  "repiten": {
+    "titulo": "Quienes repiten",
+    "nota": "Son 536 personas distintas en 14 proyectos con inscripción. Cruce de las listas de Acutis, sin guardar nombres ni datos personales.",
+    "datos": [
+      { "n": 406, "titulo": "fueron a un proyecto", "texto": "Un primer sí que cuenta mucho." },
+      { "n": 101, "titulo": "fueron a dos", "texto": "Volvieron a decir que sí." },
+      { "n": 29, "titulo": "fueron a tres o más", "texto": "Hasta cinco proyectos en un año." }
+    ]
+  },
+  "algunos": {
+    "titulo": "Algunos datos",
+    "datos": [
+      { "n": 44, "titulo": "actividades entre pastorales", "texto": "Dos o más pastorales haciendo algo juntas, desde salidas a la Protectora hasta misiones." },
+      { "n": 84, "titulo": "momentos de oración", "texto": "Misas, adoraciones, rezos y Ángelus en las facultades." },
+      { "n": 59, "titulo": "actividades en abril", "texto": "El mes más activo del año." },
+      { "n": 20, "titulo": "pastorales con actividades", "texto": "De Teología y Villarrica todavía nos faltan datos." }
+    ]
+  },
+  "comoLeer": {
+    "titulo": "Cómo leer estas cifras",
+    "datos": [
+      { "titulo": "Actividades", "texto": "Cada una cuenta una vez, aunque participen varias pastorales. 217 están confirmadas; 166 estaban planeadas y no sabemos si pasaron." },
+      { "titulo": "Participaciones", "texto": "Son inscripciones aceptadas en Acutis, no asistencia verificada." },
+      { "titulo": "Personas distintas", "texto": "Cruzamos las listas para no repetir a nadie y no guardamos nombres ni datos." },
+      { "titulo": "Faltan sus datos", "texto": "De la mayoría de las actividades no tenemos cuánta gente fue. Les vamos a pedir esas cifras." }
+    ]
+  },
+  "cierre": "Gracias por todo lo que hicimos este 2026"
+}

@@ -1,12 +1,96 @@
 ---
 import Base from '../layouts/Base.astro';
-import Pendiente from '../components/Pendiente.astro';
+import { Content as Fundacional } from '../content/fundacional.md';
+import { Content as Referencias } from '../content/referencias.md';
+import { getCargos } from '../lib/cargos.js';
+
+const cargos = getCargos();
+const pad = (n) => String(n).padStart(2, '0');
+const indice = [
+  { id: 'invitacion', texto: 'Invitación a leer' },
+  { id: 'definicion', texto: 'Definición y misión' },
+  { id: 'pilares', texto: 'Pilares' },
+  { id: 'roles', texto: 'Roles' },
+  { id: 'cargos', texto: 'Los cargos' },
+  { id: 'referencias', texto: 'Referencias' },
+];
 ---
-<Base title="Qué son las pastorales de carrera">
-  <Pendiente
-    eyebrow="Quiénes somos"
-    titulo="Qué son las pastorales de carrera"
-    bajada="Qué hacemos, cómo funcionamos y en qué campus estamos."
-    texto="Estamos escribiendo esta página. Aquí va la explicación corta de qué es una pastoral de carrera y cómo se organiza la red."
-  />
+<Base title="Qué son las pastorales de carrera" description="Qué es una pastoral de carrera: su definición, misión, pilares, roles y los cargos de un consejo. Documento Fundacional de las Pastorales de Carrera.">
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow">Quiénes somos</p>
+      <h1 class="display">Qué son las pastorales de carrera</h1>
+      <p class="lede">Este es el Documento Fundacional de las Pastorales de Carrera: la reformulación teórica y práctica de lo que somos como Pastoral UC.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container doc-layout">
+      <nav class="doc-nav" aria-label="En esta página">
+        <p>En esta página</p>
+        <ul>
+          {indice.map((i) => <li><a href={`#${i.id}`}>{i.texto}</a></li>)}
+        </ul>
+      </nav>
+      <article class="prose doc">
+        <Fundacional />
+      </article>
+    </div>
+  </section>
+
+  <!-- Cargos -->
+  <section class="section dark" id="cargos">
+    <div class="container">
+      <p class="eyebrow">Los cargos de un consejo</p>
+      <h2 class="h2">Cada cargo, en breve</h2>
+      <p class="lede">Toca el nombre de un cargo para ver de qué se trata. El perfil completo está en la <a class="inline-link" href="/consejo">Zona de Consejo</a>.</p>
+      <div class="acc-list">
+        {cargos.map((c) => (
+          <details class="cargo-acc" id={c.slug}>
+            <summary>
+              <span class="row-n">{pad(c.data.orden)}</span>
+              <span class="acc-main">
+                <span class="row-name">{c.data.titulo}</span>
+                <span class="acc-res">{c.data.resumen}</span>
+              </span>
+              <svg class="acc-icon" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 8l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </summary>
+            <div class="acc-body">
+              {(c.data.pilar || c.data.nuevo) && (
+                <p class="acc-tags">
+                  {c.data.pilar && <span class="tag">Pilar · {c.data.pilar}</span>}
+                  {c.data.nuevo && <span class="tag">Cargo nuevo</span>}
+                </p>
+              )}
+              <p>{c.data.breve}</p>
+              <a class="link-go on-dark" href={`/consejo/${c.slug}`}>Ver el perfil completo →</a>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="referencias">
+    <div class="container">
+      <div class="prose refs">
+        <h2>Referencias</h2>
+        <Referencias />
+      </div>
+    </div>
+  </section>
 </Base>
+
+<script>
+  // Si llegas con un enlace a un cargo (por ejemplo /que-son#difusion), lo deja abierto.
+  function abrirDesdeHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const el = id ? document.getElementById(id) : null;
+    if (el instanceof HTMLDetailsElement) {
+      el.open = true;
+      el.scrollIntoView({ block: 'center' });
+    }
+  }
+  abrirDesdeHash();
+  window.addEventListener('hashchange', abrirDesdeHash);
+</script>

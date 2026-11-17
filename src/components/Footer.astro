@@ -10,12 +10,18 @@ const contactos = [
     <div>
       <img src="/pastoral-uc-blanco.png" alt="Pastoral UC" width="100" height="48" />
       <p>Pastorales de Carrera, Dirección de Pastoral y Cultura Cristiana, Pontificia Universidad Católica de Chile.</p>
+      <p class="sug">
+        {sitio.sugerencias
+          ? <a class="btn btn-ghost" href={sitio.sugerencias} target="_blank" rel="noopener">Dejar una sugerencia</a>
+          : <span class="btn btn-ghost btn-off" aria-disabled="true">Sugerencias · próximamente</span>}
+      </p>
     </div>
     <div class="footer-links">
+      <a href="/que-son">Qué son</a>
       <a href="/pastorales">Pastorales</a>
-      <a href="/cargos">Cargos</a>
       <a href="/como-participar">Cómo participar</a>
-      <a href="/coordinadores">Zona de coordinadores</a>
+      <a href="/recorrido">Recorrido</a>
+      <a href="/consejo">Zona de Consejo</a>
       {contactos.map((c) => <a href={c.href}>{c.texto}</a>)}
     </div>
   </div>

@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import Arrow from '../../components/Arrow.astro';
+import TeamsMenu from '../../components/TeamsMenu.astro';
+import { getCargos } from '../../lib/cargos.js';
+
+const cargos = getCargos();
+const pad = (n) => String(n).padStart(2, '0');
+---
+<Base title="Zona de Consejo" description="Zona de Consejo de las pastorales de carrera: una guía por cada cargo, documentos para coordinadores y acceso a la carpeta de cada pastoral en Teams.">
+  <section class="page-hero dark">
+    <div class="container">
+      <p class="eyebrow">Para consejos y coordinadores</p>
+      <h1 class="display">Zona de Consejo</h1>
+      <p class="lede">Si vas a asumir un cargo, parte por la guía de tu cargo. Aquí también están los documentos para coordinadores y el acceso a tu carpeta de Teams.</p>
+      <div class="btn-row zona-acciones">
+        <TeamsMenu />
+        <a class="btn btn-light" href="/consejo/coordinacion">Zona de coordinadores</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" style="padding-top: 0">
+    <div class="container">
+      <p class="eyebrow">Cargos de los consejos</p>
+      <h2 class="h2">Cada cargo tiene su guía</h2>
+      <p class="lede">Qué hace cada cargo y los materiales que lo acompañan.</p>
+      <div class="rows">
+        {cargos.map((c) => (
+          <a class="row" href={`/consejo/${c.slug}`}>
+            <span class="row-l"><span class="row-n">{pad(c.data.orden)}</span><span class="row-name">{c.data.titulo}</span></span>
+            <Arrow />
+          </a>
+        ))}
+      </div>
+      <p class="nota on-dark">¿Quieres saber qué son las pastorales de carrera o cómo se organiza un consejo? Mira el <a class="inline-link" href="/que-son">Documento Fundacional</a>.</p>
+    </div>
+  </section>
+</Base>

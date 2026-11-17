@@ -1,31 +1,14 @@
 ---
 titulo: "Apostolado"
 orden: 4
-resumen: "Guía del cargo de Apostolado: qué hace, cómo se vive durante el año y los materiales de 2026."
-borrador: true
-# Documentos que se abren con la cuenta UC (SharePoint). Formato de cada uno:
-#   - titulo: "Informe de cierre 2026"
-#     url: "https://..."
-informes: []
+pilar: "Servicio"
+resumen: "Acerca a los demás al servicio: lleva la misión hacia afuera."
+breve: "Lleva a cabo el tercer pilar, el Servicio. Planifica, organiza, invita y lidera salidas solidarias, como Trabajos, Retiros, Misiones o salidas de los Proyectos de Solidaridad (Calcuta, Rostros, Cima, etc.)."
 materiales: []
 ---
 
-## Qué hace este cargo
+Es el rol que lleva a cabo el tercer pilar, el Servicio.
 
-Estamos escribiendo esta guía. Pronto vas a encontrar aquí, en pocas líneas, qué hace el cargo de Apostolado.
+Su rol consiste en acercar a los demás al servicio, y propiciar estas instancias. Es quien se encarga de la misión hacia afuera. En concreto, este cargo implica planificar, organizar, invitar y liderar salidas solidarias distintas, algunas iniciativas como Trabajos, Retiros, Misiones o salidas de los Proyectos de Solidaridad (Calcuta, Rostros, Cima, etc.).
 
-## Responsabilidades principales
-
-Por completar.
-
-## Cómo se vive durante el año
-
-Por completar.
-
-## Preguntas frecuentes
-
-Por completar.
-
-## A quién acudir
-
-Por completar.
+Este rol busca a personas que sean, en primer lugar, ambiciosas a la hora de servir u organizar apostolados, que crean y sepan transmitir el impacto que tiene ponerse al servicio de los demás, que sean serviciales, y organizadas para llevar a cabo los proyectos de manera ordenada y clara, facilitando así el trabajo de los demás.

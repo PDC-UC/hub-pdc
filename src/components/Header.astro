@@ -3,9 +3,9 @@ const ruta = Astro.url.pathname.replace(/\/$/, '') || '/';
 const enlaces = [
   { href: '/que-son', texto: 'Qué son' },
   { href: '/pastorales', texto: 'Pastorales' },
-  { href: '/cargos', texto: 'Cargos' },
   { href: '/como-participar', texto: 'Cómo participar' },
   { href: '/preguntas', texto: 'Preguntas' },
+  { href: '/recorrido', texto: 'Recorrido' },
 ];
 const activo = (href) => (ruta === href || ruta.startsWith(href + '/') ? 'page' : undefined);
 ---
@@ -16,7 +16,7 @@ const activo = (href) => (ruta === href || ruta.startsWith(href + '/') ? 'page' 
     </a>
     <nav class="site-nav" aria-label="Principal">
       {enlaces.map((e) => <a href={e.href} aria-current={activo(e.href)}>{e.texto}</a>)}
-      <a class="nav-pill" href="/coordinadores" aria-current={activo('/coordinadores')}>Zona de coordinadores</a>
+      <a class="nav-pill" href="/consejo" aria-current={activo('/consejo')}>Zona de Consejo</a>
     </nav>
   </div>
 </header>

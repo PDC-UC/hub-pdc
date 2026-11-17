@@ -19,12 +19,12 @@ const pad = (n) => String(n).padStart(2, '0');
       <p class="lede">Aquí encuentras quiénes somos, cómo sumarte y todo lo que necesitas para llevar un cargo en tu pastoral.</p>
       <div class="btn-row">
         <a class="btn btn-light" href="/como-participar">Quiero participar</a>
-        <a class="btn btn-ghost" href="/cargos">Tengo un cargo</a>
+        <a class="btn btn-ghost" href="/consejo">Zona de Consejo</a>
       </div>
       <div class="stats">
         <div><div class="stat-n">{pastorales.length}</div><div class="stat-l">pastorales de carrera</div></div>
         <div><div class="stat-n">{campus.size}</div><div class="stat-l">campus</div></div>
-        <div><div class="stat-n">{cargos.length}</div><div class="stat-l">cargos con su guía</div></div>
+        <div><div class="stat-n">{cargos.length}</div><div class="stat-l">cargos por consejo</div></div>
       </div>
     </div>
   </section>
@@ -37,22 +37,34 @@ const pad = (n) => String(n).padStart(2, '0');
       <div class="cards">
         <a class="card" href="/pastorales">
           <span class="card-n">01</span>
-          <span class="card-t">Quiero conocer las pastorales</span>
-          <span class="card-p">Encuentra la pastoral de tu carrera, qué hace y cómo sumarte.</span>
+          <span class="card-t">Quiero conocer las pastorales y sumarme</span>
+          <span class="card-p">Qué son, cuáles son, cómo participar y lo que hemos vivido este año.</span>
           <span class="card-go">Ver las pastorales →</span>
         </a>
-        <a class="card" href="/coordinadores">
+        <a class="card" href="/consejo">
           <span class="card-n">02</span>
-          <span class="card-t">Soy coordinador</span>
-          <span class="card-p">Guías, calendario, formularios y rutas para llevar tu pastoral.</span>
-          <span class="card-go">Ir a la zona de coordinadores →</span>
+          <span class="card-t">Soy coordinador o tengo un cargo en un consejo</span>
+          <span class="card-p">La guía de cada cargo, los documentos para coordinadores y el acceso a tu carpeta de Teams.</span>
+          <span class="card-go">Ir a la Zona de Consejo →</span>
         </a>
-        <a class="card" href="/cargos">
-          <span class="card-n">03</span>
-          <span class="card-t">Tengo un cargo en un consejo</span>
-          <span class="card-p">Qué hace tu cargo, cómo se vivió este año y los materiales de 2026.</span>
-          <span class="card-go">Ver los cargos →</span>
-        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recorrido 2026 -->
+  <section class="section dark" id="recorrido" style="border-top: 1px solid rgba(255,255,255,0.14)">
+    <div class="container">
+      <div class="head-row">
+        <div>
+          <p class="eyebrow">Recorrido 2026</p>
+          <h2 class="h2">Detrás de cada número hay alguien que dijo que sí</h2>
+        </div>
+        <a class="link-go on-dark" href="/recorrido">Recorrer el año →</a>
+      </div>
+      <div class="teaser">
+        <div class="grande"><span class="g-n">380+</span><span class="g-t">actividades</span></div>
+        <div class="grande"><span class="g-n">730+</span><span class="g-t">participaciones en apostolados</span></div>
+        <div class="grande"><span class="g-n">530+</span><span class="g-t">personas distintas</span></div>
       </div>
     </div>
   </section>
@@ -78,22 +90,22 @@ const pad = (n) => String(n).padStart(2, '0');
   <section class="section dark" id="cargos">
     <div class="container">
       <p class="eyebrow">Cargos de los consejos</p>
-      <h2 class="h2">Cada cargo tiene su guía</h2>
-      <p class="lede">Qué hace, cómo se vive durante el año y los informes y materiales de 2026, todo en un solo lugar.</p>
+      <h2 class="h2">Los cargos de un consejo</h2>
+      <p class="lede">Cada pastoral se organiza en un consejo con distintos cargos. Mira de qué se trata cada uno.</p>
       <div class="rows">
         {cargos.map((c) => (
-          <a class="row" href={`/cargos/${c.slug}`}>
+          <a class="row" href={`/que-son#${c.slug}`}>
             <span class="row-l"><span class="row-n">{pad(c.data.orden)}</span><span class="row-name">{c.data.titulo}</span></span>
             <Arrow />
           </a>
         ))}
       </div>
-      <div class="band" id="coordinadores">
+      <div class="band" id="consejo">
         <div>
-          <h3>Zona de coordinadores</h3>
-          <p>Guías, calendario, formularios y rutas para llevar tu pastoral. Los documentos internos se abren con tu cuenta UC.</p>
+          <h3>Zona de Consejo</h3>
+          <p>La guía de cada cargo, los documentos para coordinadores y el acceso a la carpeta de tu pastoral en Teams.</p>
         </div>
-        <a class="btn btn-light" href="/coordinadores">Entrar</a>
+        <a class="btn btn-light" href="/consejo">Entrar</a>
       </div>
     </div>
   </section>

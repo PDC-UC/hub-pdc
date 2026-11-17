@@ -1,0 +1,93 @@
+{
+  "nota": "Pega aquí el enlace al canal de Teams de cada pastoral (en 'url'). Si 'url' es null, aparece como pendiente en el menú. Se abren con la cuenta UC.",
+  "canales": [
+    {
+      "slug": "administracion-publica",
+      "url": null
+    },
+    {
+      "slug": "agronomia",
+      "url": null
+    },
+    {
+      "slug": "ciencias-biologicas",
+      "url": null
+    },
+    {
+      "slug": "ciencias-de-la-salud",
+      "url": null
+    },
+    {
+      "slug": "ciencias-exactas",
+      "url": null
+    },
+    {
+      "slug": "ciencias-sociales",
+      "url": null
+    },
+    {
+      "slug": "college",
+      "url": null
+    },
+    {
+      "slug": "comunicaciones",
+      "url": null
+    },
+    {
+      "slug": "construccion-civil",
+      "url": null
+    },
+    {
+      "slug": "derecho",
+      "url": null
+    },
+    {
+      "slug": "educacion",
+      "url": null
+    },
+    {
+      "slug": "enfermeria",
+      "url": null
+    },
+    {
+      "slug": "humanidades",
+      "url": null
+    },
+    {
+      "slug": "ingenieria",
+      "url": null
+    },
+    {
+      "slug": "ingenieria-comercial",
+      "url": null
+    },
+    {
+      "slug": "lo-contador",
+      "url": null
+    },
+    {
+      "slug": "medicina",
+      "url": null
+    },
+    {
+      "slug": "odontologia",
+      "url": null
+    },
+    {
+      "slug": "oriente",
+      "url": null
+    },
+    {
+      "slug": "teologia",
+      "url": null
+    },
+    {
+      "slug": "veterinaria",
+      "url": null
+    },
+    {
+      "slug": "villarrica",
+      "url": null
+    }
+  ]
+}
